@@ -11,6 +11,7 @@ Download AdventureWorks compatible database (2019) and restore the database in t
 Install SSMS to access the database     
 Visual Studio Code     
 
+
 # ETL/ELT
 ## Bronze layer
 Batch processing using Data Factory:     
@@ -34,6 +35,8 @@ Azure infrastructure with Terraform
 ·        Storage gen 2
 
 # Data Visualization in Power BI
+
+# Simple webapp that consumes Power BI Embedded reports
 
  
 
