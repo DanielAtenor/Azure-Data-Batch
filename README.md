@@ -2,11 +2,11 @@
 https://azuredevopslabs.com/labs/vstsextend/terraform/     
 https://www.youtube.com/watch?v=iQ41WqhHglk&ab_channel=Mr.KTalksTech
 
-# Environment setup - Local Machine
-## Setup SQL Server onpremises
+# Environment setup
+## Local Machine
 Install SQL Server 2019 Developer Edition    
-Cost: Free     
-Localhost     
+     Cost: Free     
+     Localhost     
 Download AdventureWorks and restore the database in the local instance     
 Install SSMS to access the database     
 Visual Studio Code     
