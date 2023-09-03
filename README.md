@@ -13,11 +13,11 @@ Visual Studio Code
 
 # ETL/ELT
 ## Bronze layer
-Batch processing using Data Factory:
-SQL Server on-premises
-CSV Files
-API
-Output: Parquet format
+Batch processing using Data Factory:     
+SQL Server on-premises     
+CSV Files     
+API     
+Output: Parquet format     
 
 ## Silver layer
 Build Data Vault
