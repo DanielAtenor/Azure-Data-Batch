@@ -42,3 +42,13 @@ Azure infrastructure with Terraform
 
  
 
+
+Install SQL Server 2019 Developer Edition
+     Cost: Free
+     Localhost
+Download AdventureWorks compatible database (2019) and restore the database in the local instance
+Install SSMS to access the database
+Visual Studio Code
+
+![Screenshot](/Images/RG%20and%20Key%20Vault%20Creation.png)
+
