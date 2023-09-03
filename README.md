@@ -2,15 +2,17 @@
 https://azuredevopslabs.com/labs/vstsextend/terraform/     
 https://www.youtube.com/watch?v=iQ41WqhHglk&ab_channel=Mr.KTalksTech
 
-# Environment setup
-## Local Machine
-Install SQL Server 2019 Developer Edition    
-     Cost: Free     
-     Localhost     
-Download AdventureWorks compatible database (2019) and restore the database in the local instance     
-Install SSMS to access the database     
-Visual Studio Code     
+# Architecture
 
+# Tools
+## Local machine / On-premises
+SQL Server 2019     
+
+## Azure
+Data Factory     
+Databricks     
+Key Vault     
+Power BI
 
 # ETL/ELT
 ## Bronze layer
