@@ -65,16 +65,20 @@ create user azure_sql_user for login azure_sql_user
 ALTER ROLE db_datareader ADD MEMBER azure_sql_user
 ```
 
-# 3 - Create a new resource group, Key Vault and configure RBAC role
-
-(1) Create KV resource. Since we don't have a RG yet, we create it at the same time
-![Screenshot](/Images/RG%20and%20Key%20Vault%20Creation.png)
-
-(2) Assign RBAC role Key vault Administrator to the user who is going to manage the KV secrets
-
-![Screenshot](/Images/Key%20vault%20Administrator%201.png)
+# 3 - Create a new resource group, Key Vault and configure RBAC role     
+     
+(1) Create KV resource. Since we don't have a RG yet, we create it at the same time     
+![Screenshot](/Images/RG%20and%20Key%20Vault%20Creation.png)     
+     
+(2) Assign RBAC role **Key vault Administrator** to the user who is going to manage the KV secrets     
+![Screenshot](/Images/Key%20vault%20Administrator%201.png)     
 ![Screenshot](/Images/Key%20vault%20Administrator%202.png)
 
+# 4 - Create the SQL Server secrets
+     
+![Screenshot](/Images/KV%20sqluser.png)
+     
+![Screenshot](/Images/KV%20sqlpassword.png)
 
 
 
