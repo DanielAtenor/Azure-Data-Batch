@@ -90,9 +90,14 @@ Add desired users to the member list
 ## 2.2) Data Factory
 
 ### 2.1.1) Create Data Factory DEV
-**Name:** Azure-Data-Batch-ADF-DEV
-**Region:** France Central
-**Version:** V2
+**Name:** Azure-Data-Batch-ADF-DEV     
+**Region:** France Central     
+**Version:** V2     
 No GIT Configuration. We will configure it later.
 
+### 2.1.2) Create Self-Hosted integration runtime
+
+Open **Azure-Data-Batch-ADF-DEV** resource -> Integration runtimes > New > Azure, Self-Hosted > Self-Hosted     
+**Name:** Azure-Data-Batch-SHIR     
+Install the launcher either Express or Manual
 
