@@ -67,7 +67,11 @@ create user azure_sql_user for login azure_sql_user
 ALTER ROLE db_datareader ADD MEMBER azure_sql_user
 ```
 
-# 2) Azure     
+### 1.2.3) Allow SQL Server logins
+
+In SSMS, go to the instance properties > Security > Server authentication: SQL Server and Windows Authentication mode
+
+# 2) Azure
 
 ## 2.1) Create a new resource group, Key Vault and configure RBAC role, store secrets from SQL Server     
      
@@ -82,7 +86,7 @@ Home > Azure-Data-Batch-KV | Access control (IAM)
 Search for **Key vault Administrator** role and select it     
 Add desired users to the member list     
 
-### 2.1.3) Create SQL Server secrets in KV
+### 2.1.3) Store SQL Server secrets in KV
      
 **Secret 1. Name:** sqluser, **Secret value:** azure_sql_user     
 **Secret 2. Name:** sqlpassword, **Secret value:** 1qaz"WSX     
@@ -101,3 +105,26 @@ Open **Azure-Data-Batch-ADF-DEV** resource -> Integration runtimes > New > Azure
 **Name:** Azure-Data-Batch-SHIR     
 Install the launcher either Express or Manual
 
+### 2.1.3) Configure read access from ADF to KV
+
+Go to **Azure-Data-Batch-KV** > Access control (IAM) > select **Key Vault Reader** role > Members > **+ Select members** > Search for the ADF resource **Azure-Data-Batch-ADF-DEV**     
+
+### 2.1.4) Create and configure a pipeline to copy data from SQL Server
+
+(A) Create a pipeline with the name **Ingest_SQL**
+(B) Add a **Copy data** activity
+(C) Configure **Source** > Add a new **Source dataset** > Name: SQL_Server > Linked service > New linked service:
+Name: SQLServer     
+Connect via integration runtime: Azure-Data-Batch-SHIR     
+Select credentials from KV     
+Create a linked service to AKV linked service     
+(D) Create the linked service to key vault     
+Name: AzureKeyVault     
+Select the subscription and then the Azure key vault name: **Azure-Data-Batch-KV**     
+Authentication method: System Assigned Managed Identityx     
+(D) Back to the SQL Server linked service configuration:     
+Server name: localhost     
+Database Name: EXN-5CG1292XKV (Open SSMS to confirm)     
+Authentication type: SQL Authentication     
+User name: azure_sql_user     
+Select password from Azure Key Vault, Secret name: sqlpassword     
