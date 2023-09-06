@@ -30,15 +30,15 @@ Delta format
 Build star schema
 Delta format
 
-# In progress
+In progress
 Azure infrastructure with Terraform
 ·        Data Factory
 ·        Databricks
 ·        Storage gen 2
 
-# Data Visualization in Power BI
+Data Visualization in Power BI
 
-# Simple webapp that consumes Power BI Embedded reports
+Simple webapp that consumes Power BI Embedded reports
 
  
 
