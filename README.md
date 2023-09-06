@@ -72,17 +72,21 @@ ALTER ROLE db_datareader ADD MEMBER azure_sql_user
 ## 2.1) Create a new resource group, Key Vault and configure RBAC role     
      
 ### 2.1.1) Create KV resource. Since we don't have a RG yet, we create it at the same time     
-![Screenshot](/Images/RG%20and%20Key%20Vault%20Creation.png)     
+**Resource group:** (New) Azure-Data-Batch     
+**Key vault name:** Azure-Data-Batch-KV    
+**Region: France:** Central     
+**Pricing tier:** Standard     
      
-### 2.1.2) Assign RBAC role **Key vault Administrator** to the user who is going to manage the KV secrets     
-![Screenshot](/Images/Key%20vault%20Administrator%201.png)     
-![Screenshot](/Images/Key%20vault%20Administrator%202.png)
+### 2.1.2) Assign RBAC role <u>Key vault Administrator</u> to the user who is going to manage the KV secrets     
+Home > Azure-Data-Batch-KV | Access control (IAM)     
+Search for **Key vault Administrator** role and select it     
+Add desired users to the member list     
 
-### 2.1.3) Create the SQL Server secrets
+### 2.1.3) Create SQL Server secrets in KV
      
-![Screenshot](/Images/KV%20sqluser.png)
-     
-![Screenshot](/Images/KV%20sqlpassword.png)
+**Name:** sqluser, **Secret value:** azure_sql_user     
+**Name:** sqlpassword, **Secret value:** 1qaz"WSX     
+
 
 
 
