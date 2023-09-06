@@ -84,8 +84,8 @@ Add desired users to the member list
 
 ### 2.1.3) Create SQL Server secrets in KV
      
-**Name:** sqluser, **Secret value:** azure_sql_user     
-**Name:** sqlpassword, **Secret value:** 1qaz"WSX     
+**Secret 1. Name:** sqluser, **Secret value:** azure_sql_user     
+**Secret 2. Name:** sqlpassword, **Secret value:** 1qaz"WSX     
 
 
 
