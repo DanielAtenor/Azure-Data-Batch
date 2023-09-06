@@ -69,7 +69,7 @@ ALTER ROLE db_datareader ADD MEMBER azure_sql_user
 
 # 2) Azure     
 
-## 2.1) Create a new resource group, Key Vault and configure RBAC role     
+## 2.1) Create a new resource group, Key Vault and configure RBAC role, store secrets from SQL Server     
      
 ### 2.1.1) Create KV resource. Since we don't have a RG yet, we create it at the same time     
 **Resource group:** (New) Azure-Data-Batch     
@@ -87,6 +87,12 @@ Add desired users to the member list
 **Secret 1. Name:** sqluser, **Secret value:** azure_sql_user     
 **Secret 2. Name:** sqlpassword, **Secret value:** 1qaz"WSX     
 
+## 2.2) Data Factory
 
+### 2.1.1) Create Data Factory DEV
+**Name:** Azure-Data-Batch-ADF-DEV
+**Region:** France Central
+**Version:** V2
+No GIT Configuration. We will configure it later.
 
 
