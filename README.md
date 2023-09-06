@@ -111,6 +111,10 @@ Go to **Azure-Data-Batch-KV** > Access control (IAM) > select **Key Vault Reader
 
 ### 2.1.4) Create and configure a pipeline to copy data from SQL Server
 
+At this point we are going to create:     
+Two linked services, one for KV and another to SQL Server;     
+One Dataset, based of the SQL Server linked service. We do not selecting a specific table of the database.     
+     
 (A) Create a pipeline with the name **Ingest_SQL**
 (B) Add a **Copy data** activity
 (C) Configure **Source** > Add a new **Source dataset** > Name: SQL_Server > Linked service > New linked service:
