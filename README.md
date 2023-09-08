@@ -95,6 +95,14 @@ Add desired users to the member list
 **Secret 2. Name:** sqlpassword, **Secret value:** 1qaz"WSX     
 
 ## 2.2) Create Storage Account
+Resource group: Azure-Data-Batch     
+Storage account name: azuredatabatchlake     
+Region: France central     
+Performance: Standard     
+Redundancy: LRS    
+
+## 2.3) Create repositories in the Datalake
+Create bronze, silver and gold repositories
 
 # 3) Data Factory
 
