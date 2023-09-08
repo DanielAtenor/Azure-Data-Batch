@@ -49,6 +49,7 @@ Install SSMS to access the database
 Visual Studio Code     
 Install Bicep plugin on VSC     
 Install Azure CLI on Windows     
+Download and install Java Runtime Environment (JRE) (Data factory copy activity makes use of Java to extract the data from SQL Server)
 
 ## 1.2 Download and install SQL Server
 Install SQL Server 2019 Developer Edition     
@@ -99,10 +100,14 @@ Resource group: Azure-Data-Batch
 Storage account name: azuredatabatchlake     
 Region: France central     
 Performance: Standard     
-Redundancy: LRS    
+Redundancy: LRS     
+Enable hierarchical namespace
 
 ## 2.3) Create repositories in the Datalake
 Create bronze, silver and gold repositories
+
+## 2.4) Give the user read acess to the container
+In order to see the data through the Azure portal, give access to your own user at the container level adding the user to the role IAM **Storage Blob Data Reader**     
 
 # 3) Data Factory
 
@@ -125,23 +130,6 @@ Go to **Azure-Data-Batch-KV** > Access control (IAM) > select **Key Vault Reader
 ## 3.4) Create and configure a pipeline to copy data from SQL Server
 
 At this point we are going to create:     
-Two linked services, one for KV and another to SQL Server;     
-One Dataset, based of the SQL Server linked service. We do not selecting a specific table of the database.     
+Three linked services, one for **Key Vault** and another for **SQL Server** source, another for **Azure Datalake Storage**;     
      
-(A) Create a pipeline with the name **Ingest_SQL**
-(B) Add a **Copy data** activity
-(C) Configure **Source** > Add a new **Source dataset** > Name: SQL_Server > Linked service > New linked service:
-Name: SQLServer     
-Connect via integration runtime: Azure-Data-Batch-SHIR     
-Select credentials from KV     
-Create a linked service to AKV linked service     
-(D) Create the linked service to key vault     
-Name: AzureKeyVault     
-Select the subscription and then the Azure key vault name: **Azure-Data-Batch-KV**     
-Authentication method: System Assigned Managed Identityx     
-(D) Back to the SQL Server linked service configuration:     
-Server name: localhost     
-Database Name: EXN-5CG1292XKV (Open SSMS to confirm)     
-Authentication type: SQL Authentication     
-User name: azure_sql_user     
-Select password from Azure Key Vault, Secret name: sqlpassword     
+To see the full pipeline implementation consult the repository or the data factory resource.
