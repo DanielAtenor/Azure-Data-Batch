@@ -74,6 +74,7 @@ ALTER ROLE db_datareader ADD MEMBER azure_sql_user
 In SSMS, go to the instance properties > Security > Server authentication: SQL Server and Windows Authentication mode
 
 # 2) Azure
+Create and manage Resource Group, Key Vault, Storage Account
 
 ## 2.1) Create a new resource group, Key Vault and configure RBAC role, store secrets from SQL Server     
      
@@ -93,25 +94,27 @@ Add desired users to the member list
 **Secret 1. Name:** sqluser, **Secret value:** azure_sql_user     
 **Secret 2. Name:** sqlpassword, **Secret value:** 1qaz"WSX     
 
-## 2.2) Data Factory
+## 2.2) Create Storage Account
 
-### 2.1.1) Create Data Factory DEV
+# 3) Data Factory
+
+## 3.1) Create Data Factory DEV
 **Name:** Azure-Data-Batch-ADF-DEV     
 **Region:** France Central     
 **Version:** V2     
 No GIT Configuration. We will configure it later.
 
-### 2.1.2) Create Self-Hosted integration runtime
+## 3.2) Create Self-Hosted integration runtime
 
 Open **Azure-Data-Batch-ADF-DEV** resource -> Integration runtimes > New > Azure, Self-Hosted > Self-Hosted     
 **Name:** Azure-Data-Batch-SHIR     
 Install the launcher either Express or Manual
 
-### 2.1.3) Configure read access from ADF to KV
+## 3.3) Configure read access from ADF to KV
 
 Go to **Azure-Data-Batch-KV** > Access control (IAM) > select **Key Vault Reader** role > Members > **+ Select members** > Search for the ADF resource **Azure-Data-Batch-ADF-DEV**     
 
-### 2.1.4) Create and configure a pipeline to copy data from SQL Server
+## 3.4) Create and configure a pipeline to copy data from SQL Server
 
 At this point we are going to create:     
 Two linked services, one for KV and another to SQL Server;     
