@@ -44,15 +44,17 @@ Simple webapp that consumes Power BI Embedded reports
 
 # 1) Local machine
 
-## 1.1) Instal SQL Server and local tools
+## 1.1) Instal local tools
+Install SSMS to access the database     
+Visual Studio Code     
+Install Bicep plugin on VSC     
+Install Azure CLI on Windows     
+
+## 1.2 Download and install SQL Server
 Install SQL Server 2019 Developer Edition     
      Cost: Free     
      Localhost     
-Download AdventureWorks compatible database (2019) and restore the database in the local instance     
-Install SSMS to access the database     
-Visual Studio Code     
-
-## 1.2 SQL Server
+Download AdventureWorks compatible database (2019) and restore the database in the local instance    
 
 ### 1.2.1) Create a SQL Server user
 
